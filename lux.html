@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lamaso Lux - Boutique de Parfums</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <h1 class="logo">Lamaso Lux</h1>
+    <p class="subtitle">L’élégance en une goutte de parfum</p>
+  </header>
+
+  <!-- PRODUITS -->
+  <section class="produits">
+    <h2>Nos Parfums</h2>
+    <div class="grid">
+
+      <!-- Le Mal Parfum -->
+      <div class="card">
+        <img src="beau parfum.webp" alt="Le Mal Parfum">
+        <h3>Le Mal Parfum</h3>
+        <select onchange="changerPrix(this, 'malParfum')">
+          <option value="125">10 ml - 125 DH</option>
+          <option value="65">5 ml - 65 DH</option>
+        </select>
+        <p id="prix-malParfum" class="prix">125 DH</p>
+        <button class="btn" onclick="ouvrirFormulaire('Le Mal Parfum')">Commander ici</button>
+      </div>
+
+      <!-- Le Mal Élixir -->
+      <div class="card">
+        <img src="mal eelixir.webp" alt="Le Mal Élixir">
+        <h3>Le Mal Élixir</h3>
+        <select onchange="changerPrix(this, 'malElixir')">
+          <option value="130">10 ml - 130 DH</option>
+          <option value="65">5 ml - 65 DH</option>
+        </select>
+        <p id="prix-malElixir" class="prix">130 DH</p>
+        <button class="btn" onclick="ouvrirFormulaire('Le Mal Élixir')">Commander ici</button>
+      </div>
+
+      <!-- Stronger With You Intensely -->
+      <div class="card">
+        <img src="stronger.webp" alt="Stronger With You Intensely">
+        <h3>Stronger With You Intensely</h3>
+        <select onchange="changerPrix(this, 'stronger')">
+          <option value="130">10 ml - 130 DH</option>
+          <option value="70">5 ml - 70 DH</option>
+        </select>
+        <p id="prix-stronger" class="prix">130 DH</p>
+        <button class="btn" onclick="ouvrirFormulaire('Stronger With You Intensely')">Commander ici</button>
+      </div>
+
+      <!-- 9PM -->
+      <div class="card">
+        <img src="9pm.webp" alt="9 PM">
+        <h3>9 PM</h3>
+        <select onchange="changerPrix(this, 'neufpm')">
+          <option value="80">10 ml - 80 DH</option>
+          <option value="45">5 ml - 45 DH</option>
+        </select>
+        <p id="prix-neufpm" class="prix">80 DH</p>
+        <button class="btn" onclick="ouvrirFormulaire('9 PM')">Commander ici</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FORMULAIRE DE COMMANDE -->
+  <div id="formulaire-container" class="formulaire-container">
+    <div class="formulaire">
+      <h3 id="produit-nom"></h3>
+      <form id="commandeForm" method="POST" action="lamaso.php">
+        <input type="text" name="nom" placeholder="Nom" required>
+        <input type="text" name="prenom" placeholder="Prénom" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="tel" name="numero" placeholder="Numéro de téléphone" required>
+        <input type="text" name="ville" placeholder="Ville" required>
+        <input type="text" name="localisation" placeholder="Localisation" required>
+        <input type="hidden" name="produit" id="produit-hidden">
+        <input type="hidden" name="prix" id="prix-hidden">
+        <button type="submit">Envoyer la commande</button>
+      </form>
+      <button class="fermer" onclick="fermerFormulaire()">✖</button>
+    </div>
+  </div>
+
+  <!-- MESSAGE DE REUSSITE -->
+  <div id="message" class="message">
+    <p>Merci pour votre confiance !<br>Notre équipe vous contactera bientôt.</p>
+  </div>
+
+  <script src="lamaso.js"></script>
+
+</body>
+</html>

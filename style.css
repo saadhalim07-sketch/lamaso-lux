@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+body { background:#fffaf5; color:#333; overflow-x:hidden; }
+
+/* HEADER */
+.header { text-align:center; padding:60px 20px; background: linear-gradient(135deg, #d4af37, #000); color:white; opacity:0; transform:translateY(-30px); transition:1s ease;}
+.header.loaded { opacity:1; transform:translateY(0);}
+.logo { font-size:2.8rem; letter-spacing:2px; text-transform:uppercase; }
+.subtitle { font-size:1.1rem; opacity:0.9; }
+
+/* PRODUITS */
+.produits { padding:50px 20px; text-align:center; }
+.produits h2 { font-size:2rem; margin-bottom:30px; color:#000; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:25px; }
+.card { background:white; border-radius:15px; padding:15px; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; opacity:0; transform:translateY(40px);}
+.card.visible { opacity:1; transform:translateY(0);}
+.card:hover { transform:translateY(-8px); box-shadow:0 8px 20px rgba(0,0,0,0.2);}
+.card img { width:100%; border-radius:12px; }
+.card h3 { margin-top:10px; font-size:1.1rem; }
+select { margin-top:10px; padding:8px; border-radius:8px; border:1px solid #ccc; width:100%; font-size:0.9rem; }
+.prix { color:#d4af37; font-weight:bold; margin:10px 0 15px; }
+.btn { background:#000; color:white; border:none; padding:10px 18px; border-radius:25px; cursor:pointer; transition:0.3s;}
+.btn:hover { background:#d4af37; color:#000; }
+
+/* FORMULAIRE */
+.formulaire-container { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); display:none; justify-content:center; align-items:center;}
+.formulaire-container.actif { display:flex; }
+.formulaire { background:white; padding:30px; border-radius:15px; width:300px; position:relative;}
+.formulaire h3 { margin-bottom:15px; text-align:center;}
+.formulaire input { width:100%; padding:8px; margin-bottom:10px; border:1px solid #ccc; border-radius:8px;}
+.formulaire button[type="submit"] { width:100%; background:#000; color:white; border:none; padding:10px; border-radius:25px; cursor:pointer;}
+.formulaire button[type="submit"]:hover { background:#d4af37; color:#000;}
+.fermer { position:absolute; top:8px; right:10px; background:none; border:none; font-size:18px; cursor:pointer;}
+
+/* MESSAGE */
+.message { position:fixed; bottom:30px; right:30px; background:#111; color:white; padding:15px 25px; border-radius:10px; font-size:14px; opacity:0; pointer-events:none; transition:opacity 0.5s ease;}
+.message.actif { opacity:1; pointer-events:auto; }
+
+/* WhatsApp avec logo */
+.whatsapp-btn { position:fixed; bottom:25px; left:25px; width:60px; height:60px; border-radius:50%; box-shadow:0 4px 10px rgba(0,0,0,0.3); transition:transform 0.3s ease; background:#25D366; display:flex; justify-content:center; align-items:center; z-index:1000;}
+.whatsapp-btn:hover { transform:scale(1.1); }
+.whatsapp-btn img { width:35px; height:35px; }
+
+/* Mode sombre */
+.dark-toggle { position:fixed; top:20px; right:25px; background:#333; color:#fff; border:none; border-radius:50%; padding:10px 12px; cursor:pointer; font-size:18px; transition:0.3s;}
+.dark-toggle:hover { transform:rotate(20deg); }
+body.dark { background:#111; color:#eee; }
+body.dark .card { background:#222; color:#ddd; }
